@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>潮時計（Shiodokei） - 公式法規関連ドキュメント</title>
-    <meta name="description" content="アングラーのための高精度潮汐アプリケーション「潮時計」の公式利用規約、プライバシーポリシー、特定商取引法に基づく表記です。">
+    <title>潮時計（Shiodokei） - 釣れる時間が見える高精度潮汐・流速アプリ</title>
+    <meta name="description" content="1分単位の流速・潮位数値化で「今、釣れる瞬間」が目に見える。現場の時差を5分単位で補正。過去10年のデータを解放し、爆釣パターンを未来に再現するアングラー専用カスタムタイドグラフ「潮時計」。">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,24 +13,187 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Elements -->
+    <!-- Background Ambient Glow -->
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
 
     <div class="container">
         <!-- Header -->
         <header id="main-header">
-            <div class="logo-container">
-                <div class="brand-text" style="text-align: center;">
+            <div class="logo-container" onclick="showHome()">
+                <div class="brand-text">
                     <h1>潮時計</h1>
-                    <span style="text-align: center; padding-left: 0; margin-top: 4px;">SHIODOKEI</span>
+                    <span>SHIODOKEI</span>
                 </div>
             </div>
-            <p class="subtitle">アングラーのための高精度潮汐アプリケーション</p>
+            <p class="subtitle">1分単位の数値化で「釣れる時間」を可視化するタイドグラフ</p>
         </header>
 
-        <!-- Main Content Area with Tab Switching -->
-        <main>
+        <!-- ==========================================
+             1. PRODUCT VIEW (LP MAIN)
+             ========================================== -->
+        <div id="product-view">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h2 class="hero-title">「釣れる時間」が、<br class="mobile-break">1分単位で見えてくる。</h2>
+                <p class="hero-desc">
+                    「潮見表通りに動いたのに釣れなかった…」その原因は、基準港とあなたの釣り場との間にある「ズレ（時差）」にあります。<br>
+                    潮時計は、現場の肌感覚に合わせて潮汐・流速グラフを5分単位で手動補正。さらに潮位・流速を1分単位で数値化し、リアルタイムに追従します。<br>
+                    感覚頼みの釣りを卒業し、爆釣した「あの時」の状況をグラフ上に完全可視化。未来の同じ潮回りを引き当てて再現するための、本気のアングラー専用カスタム計器です。
+                </p>
+                <div class="download-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.lockcalm.shiodokei" class="btn-download">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.5 10c-.17 0-.33.03-.5.05V5c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v5.05c-.17-.02-.33-.05-.5-.05-2.5 0-4.5 2-4.5 4.5S4 19 6.5 19h11c2.5 0 4.5-2 4.5-4.5s-2-4.5-4.5-4.5zM11 13H8v-2h3V8h2v3h3v2h-3v3h-2v-3z"/>
+                        </svg>
+                        <span>Google Play でダウンロード</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h3 class="section-title">実戦で結果を出すための5大機能</h3>
+                <div class="features-grid">
+                    <!-- Feature 1: 1分単位の潮汐・流速数値化 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h4>1分刻みの流速・潮位数値化</h4>
+                        <p>これまで「なんとなく」でしか見られなかった潮の満ち引きや流れの速さを、1分単位で精密に数値化。潮が動き始める瞬間や緩む瞬間など、魚の活性が急変する「最高の時合」を完璧に捉えます。</p>
+                    </div>
+
+                    <!-- Feature 2: 5分単位の時間補正 -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4>5分単位の「現場時差」補正 <span class="badge badge-pro">PRO</span></h4>
+                        <p>基準港データと実際のポイントのズレを、5分単位で簡単手動修正。潮汐グラフ全体があなたの釣り場に合わせて自動シフトし、超実戦仕様の正確な潮汐表へと進化します。</p>
+                    </div>
+
+                    <!-- Feature 3: マイポイント -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h4>地図上マイポイント登録100箇所 <span class="badge badge-pro">PRO</span></h4>
+                        <p>全国の公式港239箇所に加え、地図上を長押しするだけで緯度経度からピンポイントで「マイポイント」を最大100箇所登録可能。堤防の角や沖の瀬など、あなただけの秘密の場所を直接管理できます。</p>
+                    </div>
+
+                    <!-- Feature 4: 釣行ログ -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h4>爆釣パターン再現「釣行ログ」 <span class="badge badge-pro">PRO</span></h4>
+                        <p>釣れた瞬間を記録するだけで、その時の「港名」「潮位」「流速」「月齢」をログに自動連携。日記で終わらせず、「あの時と同じ潮回り・流速になる未来の特定日」を科学的に予測・再現します。</p>
+                    </div>
+
+                    <!-- Feature 5: 10年データ -->
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <svg class="feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h4>10年分のデータ完全解放 <span class="badge badge-pro">PRO</span></h4>
+                        <p>無料版の現在時刻の前後 24 時間の表示制限を完全に撤廃。過去 10 年間に及ぶ膨大な実測データから、未来の予測潮汐グラフまで自由にアクセス。シーズンに合わせた戦略的な分析が行えます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="pricing-section">
+                <h3 class="section-title">プラン料金</h3>
+                
+                <!-- Plan Pricing Cards -->
+                <div class="pricing-rates">
+                    <div class="rate-card">
+                        <span class="rate-title">無料プラン</span>
+                        <div class="rate-price">¥0</div>
+                        <p class="rate-desc">基本的な潮位の確認と1分単位の数値化をお試ししたい方に</p>
+                    </div>
+                    <div class="rate-card rate-card-premium">
+                        <div class="best-value">2ヶ月分お得</div>
+                        <span class="rate-title">PROプラン（年額）</span>
+                        <div class="rate-price">¥2,980 <span class="rate-unit">/ 年</span></div>
+                        <p class="rate-desc">長期的な釣行の分析と、科学的な爆釣パターン再現システムをフル活用する方に</p>
+                    </div>
+                    <div class="rate-card">
+                        <span class="rate-title">PROプラン（月額）</span>
+                        <div class="rate-price">¥300 <span class="rate-unit">/ 月</span></div>
+                        <p class="rate-desc">手軽にすべてのプロ機能を利用したい方に</p>
+                    </div>
+                </div>
+
+                <!-- Plan Comparison Table -->
+                <div class="table-container">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>機能項目</th>
+                                <th>無料プラン</th>
+                                <th class="col-highlight">PROプラン</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-name">潮位・流速データ表示</td>
+                                <td>前後24時間のみ</td>
+                                <td class="col-highlight"><strong>過去10年間 〜 未来まで無制限</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">表示対象港</td>
+                                <td>気象庁公式239港のみ</td>
+                                <td class="col-highlight"><strong>公式239港 ＋ マイポイント100箇所</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">時間補正（時差調整）</td>
+                                <td>なし</td>
+                                <td class="col-highlight"><strong>5分単位の精密時間補正</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">釣行ログ機能</td>
+                                <td class="text-disabled">利用不可</td>
+                                <td class="col-highlight"><strong>無制限（グラフ連動・カレンダー・CSV出力）</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">広告表示</td>
+                                <td>あり</td>
+                                <td class="col-highlight"><strong>完全広告なし（ノンストレス）</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ==========================================
+             2. DOCUMENT VIEW (LEGAL DOCUMENTS)
+             ========================================== -->
+        <div id="document-view" style="display: none;">
+            <div class="back-home-container">
+                <button class="btn-back" onclick="showHome()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="back-icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    ホーム（製品紹介）へ戻る
+                </button>
+            </div>
+
             <!-- Tab Controls -->
             <div class="tabs-container">
                 <button id="tab-btn-terms" class="tab-btn active" onclick="switchTab('terms')">利用規約</button>
@@ -38,7 +201,7 @@
                 <button id="tab-btn-tokusho" class="tab-btn" onclick="switchTab('tokusho')">特定商取引法に基づく表記</button>
             </div>
 
-            <!-- Tab Content Panel -->
+            <!-- Tab Content Panel Container -->
             <div class="content-card">
                 <!-- Terms of Service Section -->
                 <section id="content-terms" class="content-panel active">
@@ -53,7 +216,7 @@
                         <ol>
                             <li>本アプリが提供する潮汐、気象、マップ、位置情報等のすべてのデータは計算値または予測値であり、その正確性、完全性、最新性を保証するものではありません。</li>
                             <li>航海、海上交通、避難判断など、生命・身体や財産の安全に関わる重要な判断においては、本アプリの情報を単独で使用せず、必ず気象庁や海上保安庁等の公的機関が発表する公式情報をご確認ください。</li>
-                            <li>本アプリの利用によりユーザーまたは第三者に生じた一切の損害（海上における事故、釣具の紛失、釣行計画の不都合等）について、開発者は一切の責任を負いません。</li>
+                            <li>本アプリの利用によりユーザーまたは開発者以外の第三者に生じた一切の損害（海上における事故、釣具の紛失、釣行計画の不都合等）について、開発者は一切の責任を負いません。</li>
                         </ol>
 
                         <h3>第3条（禁止事項）</h3>
@@ -86,14 +249,16 @@
                         <p>本アプリは、ユーザーの端末の現在地周辺にある標準港の検索、および地図上での現在地表示を行う目的においてのみ、端末の位置情報（GPS）を使用します。取得した位置情報は端末内でのリアルタイムな処理にのみ使用され、外部サーバーに送信されたり保存されたりすることは一切ありません。</p>
 
                         <h3>3. 広告の配信と第三者データ収集について</h3>
-                        <p>本アプリの無料版では、広告配信のために第三者配信の広告サービス「Google AdMob」を使用しています。広告配信事業者は、ユーザーの興味に応じたパーソナライズド広告を表示するために、デバイス識別子（広告ID）などを匿名で収集する場合があります。これらのデータ収集を拒否したい場合は、端末の設定から広告トラッキングの制限を行ってください。</p>
+                        <p>本アプリの無料版では、広告配信のために第三者配信 of 広告サービス「Google AdMob」を使用しています。広告配信事業者は、ユーザーの興味に応じたパーソナライズド広告を表示するために、デバイス識別子（広告ID）などを匿名で収集する場合があります。これらのデータ収集を拒否したい場合は、端末の設定から広告トラッキングの制限を行ってください。</p>
 
                         <h3>4. 課金情報の管理について</h3>
                         <p>本アプリのPROプラン定期購読管理には、外部システム「RevenueCat」を使用しています。購入の復元や確認に必要な決済データ（Googleのレシート情報）は匿名化されて処理され、個人のプライバシー情報を伴う形で保存されることはありません。</p>
 
                         <h3>5. お問い合わせ窓口</h3>
-                        <p class="contact-info">本アプリにおける利用規約およびプライバシーポリシーに関するお問い合わせは、下記メールアドレスまでご連絡ください。<br>
-                        <strong>お問い合わせ先：</strong> <a href="mailto:shiodokei.official@gmail.com" class="contact-link">shiodokei.official@gmail.com</a></p>
+                        <p class="contact-info">
+                            本アプリにおける利用規約およびプライバシーポリシーに関するお問い合わせは、下記メールアドレスまでご連絡ください。<br>
+                            <strong>お問い合わせ先：</strong> <a href="mailto:shiodokei.official@gmail.com" class="contact-link">shiodokei.official@gmail.com</a>
+                        </p>
                     </div>
                 </section>
 
@@ -153,15 +318,22 @@
                     </div>
                 </section>
             </div>
-        </main>
+        </div>
 
         <!-- Footer -->
         <footer id="main-footer">
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="showDocument('terms')">利用規約</a>
+                <span class="divider">|</span>
+                <a href="javascript:void(0)" onclick="showDocument('privacy')">プライバシーポリシー</a>
+                <span class="divider">|</span>
+                <a href="javascript:void(0)" onclick="showDocument('tokusho')">特定商取引法に基づく表記</a>
+            </div>
             <p>&copy; 2026 潮時計 (Shiodokei). All Rights Reserved.</p>
         </footer>
     </div>
 
-    <!-- Tab Logic JavaScript -->
+    <!-- Script Area for Navigation -->
     <script>
         function switchTab(tabName) {
             // Remove active classes
@@ -169,15 +341,38 @@
             document.querySelectorAll('.content-panel').forEach(panel => panel.classList.remove('active'));
             
             // Add active classes to targets
-            document.getElementById('tab-btn-' + tabName).classList.add('active');
-            document.getElementById('content-' + tabName).classList.add('active');
+            const targetBtn = document.getElementById('tab-btn-' + tabName);
+            const targetPanel = document.getElementById('content-' + tabName);
+            if (targetBtn) targetBtn.classList.add('active');
+            if (targetPanel) targetPanel.classList.add('active');
         }
 
-        // URLのハッシュ（#terms, #privacy, #tokusho）を読み取って自動タブ切り替え
+        function showHome() {
+            document.getElementById('product-view').style.display = 'block';
+            document.getElementById('document-view').style.display = 'none';
+            // URLのハッシュをリセット
+            if (history.pushState) {
+                history.pushState(null, null, ' ');
+            } else {
+                window.location.hash = '';
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showDocument(docName) {
+            document.getElementById('product-view').style.display = 'none';
+            document.getElementById('document-view').style.display = 'block';
+            switchTab(docName);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // URLのハッシュ（#terms, #privacy, #tokusho）を読み取って画面切り替え
         function handleHash() {
             const hash = window.location.hash.replace('#', '');
             if (hash === 'terms' || hash === 'privacy' || hash === 'tokusho') {
-                switchTab(hash);
+                showDocument(hash);
+            } else {
+                showHome();
             }
         }
 
