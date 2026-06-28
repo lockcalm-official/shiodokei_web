@@ -1,20 +1,20 @@
 /* ==========================================
    Shiodokei (潮時計) Web CSS Design
-   Premium Dark Ocean Theme
+   Premium Dark Ocean Theme - Redesign
    ========================================== */
 
 /* Design Tokens */
 :root {
-    --bg-dark: #080a10;
-    --bg-card: rgba(18, 22, 32, 0.65);
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-dark: #07090e;
+    --bg-card: rgba(13, 17, 24, 0.75);
+    --border-color: rgba(255, 255, 255, 0.06);
     --text-primary: #ffffff;
     --text-secondary: #a0aec0;
-    --text-muted: #718096;
-    --cyan: #00f2fe;
+    --text-muted: #64748b;
+    --cyan: #00f0ff;
     --blue: #0072ff;
-    --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #0072ff 100%);
-    --accent-glow: rgba(0, 242, 254, 0.25);
+    --accent-gradient: linear-gradient(135deg, #00f0ff 0%, #0072ff 100%);
+    --accent-glow: rgba(0, 240, 255, 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -41,10 +41,10 @@ body {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    filter: blur(150px);
+    filter: blur(160px);
     z-index: -1;
     pointer-events: none;
-    opacity: 0.15;
+    opacity: 0.12;
 }
 
 .bg-glow-1 {
@@ -54,16 +54,22 @@ body {
 }
 
 .bg-glow-2 {
-    bottom: -200px;
-    right: -100px;
+    top: 50%;
+    right: -200px;
     background: radial-gradient(circle, var(--blue) 0%, rgba(0,0,0,0) 70%);
+}
+
+.bg-glow-3 {
+    bottom: -100px;
+    left: 20%;
+    background: radial-gradient(circle, var(--cyan) 0%, rgba(0,0,0,0) 70%);
 }
 
 /* Layout Container */
 .container {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 60px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,61 +78,425 @@ body {
 /* Header Design */
 #main-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     animation: fadeInDown 0.8s ease-out;
 }
 
 .logo-container {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.brand-logo {
-    width: 56px;
-    height: 56px;
-    filter: drop-shadow(0 0 12px var(--accent-glow));
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
 .brand-text h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
 .brand-text span {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     display: block;
-    text-align: left;
-    margin-top: -4px;
-    padding-left: 2px;
+    text-align: center;
+    margin-top: 2px;
+    padding-left: 5px;
 }
 
 .subtitle {
     font-size: 14px;
     color: var(--text-secondary);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-weight: 300;
 }
 
-/* Main Content Area */
-main {
+/* ==========================================
+   1. PRODUCT VIEW (LP)
+   ========================================== */
+
+#product-view {
     width: 100%;
     animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 40px 0 60px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.mobile-break {
+    display: none;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Download Buttons */
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent-gradient);
+    color: #05070a;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4);
+}
+
+.btn-download.btn-secondary {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+.btn-download.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.4);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Section Common Title */
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 36px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-gradient);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Features Grid */
+.features-section {
+    padding: 40px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+    border-color: rgba(0, 240, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--cyan);
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.feature-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.badge-pro {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--cyan);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Pricing Rates */
+.pricing-section {
+    padding: 40px 0;
+}
+
+.pricing-rates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.rate-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.rate-card-premium {
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.rate-card-premium::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    padding: 1px;
+    background: var(--accent-gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+}
+
+.best-value {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-gradient);
+    color: #05070a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.rate-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.rate-price {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.rate-card-premium .rate-price {
+    color: var(--cyan);
+}
+
+.rate-unit {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.rate-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Pricing Table */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin-top: 20px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 18px 24px;
+    font-size: 14px;
+}
+
+.pricing-table th {
+    font-weight: 700;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+}
+
+.pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pricing-table .feature-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 34%;
+}
+
+.pricing-table .col-highlight {
+    background: rgba(0, 240, 255, 0.02);
+    color: var(--text-primary);
+}
+
+.pricing-table th.col-highlight {
+    color: var(--cyan);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.pricing-table td.col-highlight strong {
+    color: var(--cyan);
+}
+
+.text-disabled {
+    color: var(--text-muted) !important;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* ==========================================
+   2. DOCUMENT VIEW (LEGAL DOCUMENTS)
+   ========================================== */
+
+#document-view {
+    width: 100%;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Back to Home Button */
+.back-home-container {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: var(--transition-smooth);
+}
+
+.btn-back:hover {
+    color: var(--cyan);
+    border-color: rgba(0, 240, 255, 0.3);
+    background: rgba(0, 240, 255, 0.02);
+}
+
+.back-icon {
+    width: 16px;
+    height: 16px;
 }
 
 /* Glassmorphic Tabs */
 .tabs-container {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: 30px;
     padding: 6px;
@@ -142,8 +512,8 @@ main {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 10px 28px;
-    font-size: 14px;
+    padding: 10px 24px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 24px;
@@ -171,7 +541,6 @@ main {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     width: 100%;
-    min-height: 400px;
 }
 
 /* Tab Panels Display */
@@ -181,7 +550,7 @@ main {
 
 .content-panel.active {
     display: block;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.4s ease-out;
 }
 
 /* Typography Inside Panel */
@@ -212,7 +581,6 @@ main {
     font-size: 14px;
     color: var(--text-secondary);
     margin-bottom: 16px;
-    text-align: justify;
 }
 
 .doc-body ol, .doc-body ul {
@@ -282,7 +650,10 @@ main {
     margin-top: 4px;
 }
 
-/* Footer Section */
+/* ==========================================
+   COMMON FOOTER
+   ========================================== */
+
 #main-footer {
     margin-top: 60px;
     text-align: center;
@@ -292,7 +663,32 @@ main {
     animation: fadeIn 1.2s ease-out;
 }
 
-/* Animations */
+.footer-links {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--cyan);
+}
+
+.footer-links .divider {
+    color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================
+   ANIMATIONS & RESPONSIVENESS
+   ========================================== */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -301,7 +697,7 @@ main {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(16px);
     }
     to {
         opacity: 1;
@@ -312,7 +708,7 @@ main {
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-16px);
     }
     to {
         opacity: 1;
@@ -321,22 +717,44 @@ main {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-rates {
+        grid-template-columns: 1fr;
+    }
+    
+    .rate-card {
+        padding: 28px 20px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 40px 16px;
     }
-    
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .mobile-break {
+        display: block;
+    }
+
     .content-card {
         padding: 24px;
     }
 
-    .brand-text h1 {
-        font-size: 26px;
-    }
-
     .tab-btn {
-        padding: 8px 16px;
-        font-size: 13px;
+        padding: 8px 14px;
+        font-size: 11px;
     }
     
     /* Mobile responsive for tokusho table */
@@ -351,7 +769,16 @@ main {
     }
     
     .tokusho-table tr {
-        padding: 10px 0;
+        padding: 8px 0;
         display: block;
+    }
+
+    .pricing-table th, .pricing-table td {
+        padding: 12px 14px;
+        font-size: 12px;
+    }
+    
+    .pricing-table .feature-name {
+        width: auto;
     }
 }
